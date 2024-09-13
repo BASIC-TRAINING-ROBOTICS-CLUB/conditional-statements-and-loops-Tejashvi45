@@ -1,0 +1,10 @@
+Synchronous Reset Flip-Flop
+
+Implement a simple simulation of a D flip-flop with synchronous reset in C. 
+The flip-flop should have inputs for data (D), clock (CLK), and reset, and should output the current state (Q).
+
+Develop a library that incoorporates the necessary functions or classes to perform essential calculations required by users. 
+Also submit a document file about the things you learned while doing the task( be it mathematics, logic or even code syntax ).
+
+Documentation is mandatory regardless of whether the task is completed.If the task is not completed, provide a detailed explanation of the technical 
+reasons or challenges that prevented its completion.
