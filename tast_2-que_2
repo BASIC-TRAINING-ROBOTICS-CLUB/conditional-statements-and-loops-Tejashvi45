@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+void updateDFF(bool *Q, bool D, bool clk, bool reset) {
+    if (clk) {           
+        *Q = reset ? false : D; 
+    }
+}
+
+int main() {
+    bool Q = false; 
+    bool D = false; 
+    bool clk = false; 
+    bool reset = false; 
+
+    clk = true; reset = true; updateDFF(&Q, D, clk, reset);
+    printf("Q after reset: %d\n", Q);
+
+    reset = false; D = true; updateDFF(&Q, D, clk, reset);
+    printf("Q after setting D to 1: %d\n", Q);
+
+    clk = false; D = false; updateDFF(&Q, D, clk, reset);
+    printf("Q with clock inactive: %d\n", Q);
+
+    return 0;
+}
