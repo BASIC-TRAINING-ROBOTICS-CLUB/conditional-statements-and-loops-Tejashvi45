@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+void updateFF(bool *Q, bool D, bool clk, bool reset) {
+    if (clk) { // Check for active clock
+        *Q = (reset) ? false : D; 
+    }
+}
+
+int main() {
+    bool Q = false, D = false, clk = false, reset = false;
+
+    // Example usage
+    clk = true; reset = true; updateFF(&Q, D, clk, reset);
+    printf("Q after reset: %d\n", Q);
+
+    reset = false; D = true; updateFF(&Q, D, clk, reset);
+    printf("Q after setting D to 1: %d\n", Q);
+
+    clk = false; D = false; updateFF(&Q, D, clk, reset);
+    printf("Q with clock inactive: %d\n", Q);
+
+    return 0;
+}
